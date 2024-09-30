@@ -1,9 +1,6 @@
 package com.example.inicial1.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.envers.Audited;
 
@@ -15,12 +12,9 @@ import org.hibernate.envers.Audited;
 @ToString
 @Builder
 @Audited
-public class Autor {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+public class Autor extends Base{
     private String nombre;
     private String apellido;
+    @Column(length = 1500)
     private String biografia;
 }

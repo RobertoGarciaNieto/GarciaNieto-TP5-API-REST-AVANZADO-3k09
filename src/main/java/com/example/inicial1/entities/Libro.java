@@ -13,26 +13,15 @@ import java.util.List;
 @Setter
 @Getter
 @ToString
-@Builder
 @Audited
-public class Libro {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Libro extends Base{
 
     private String titulo;
     private String fecha;
     private String genero;
     private int paginas;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinTable(
-            name = "autor_libro",
-            joinColumns= @JoinColumn(name = "libro:id"),
-            inverseJoinColumns = @JoinColumn(name="categoria_id"))
-    private List<Autor> autores = new ArrayList<>();
-
-
+    @ManyToMany(cascade = CascadeType.REFRESH)
+    private List<Autor> autores;
 }
 

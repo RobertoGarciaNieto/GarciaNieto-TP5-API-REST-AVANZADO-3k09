@@ -13,15 +13,8 @@ import org.hibernate.envers.Audited;
 @ToString
 @Builder
 @Audited
-public class Localidad {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+public class Localidad extends Base{
     private String denominacion;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "fk_domicilio")
-    private Domicilio domicilio;
 
 }

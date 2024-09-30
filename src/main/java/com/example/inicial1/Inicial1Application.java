@@ -1,8 +1,10 @@
 package com.example.inicial1;
 
-import com.example.inicial1.entities.Domicilio;
-import com.example.inicial1.entities.Persona;
+import com.example.inicial1.entities.*;
 import com.example.inicial1.repositories.PersonaRepository;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +27,9 @@ public class Inicial1Application {
 		SpringApplication.run(Inicial1Application.class, args);
 
 		System.out.println("funcionando");
+
 	}
 
 }
+
+
